@@ -1,0 +1,32 @@
+<!--posts/posts.wxml-->
+<view>
+  <swiper indicator-dots="true" autoplay="true">
+    <swiper-item>
+      <image src="/images/post/bl.png"/>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/post/cat.png"/>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/post/crab.png"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="/images/avatar/1.png"/>
+      <text class="post-date">Nov 18 2024</text>
+    </view>
+
+    <text class="post-title">标题</text>
+    <image class="post-image" src="/images/vr.png"/>
+    <text class="post-content">内容</text>
+
+    <view class="post-like">
+      <image class="post-like-image" src="/images/icon/chat.png"/>
+      <text class="post-like-font">92</text>
+      <image class="post-like-image" src="/images/icon/view.png"/>
+      <text class="post-like-font">102</text>
+    </view>
+  </view>
+</view>
