@@ -1,4 +1,5 @@
-// posts/posts.js
+import {content} from '../data/posts_data';
+
 Page({
 
   /**
@@ -8,11 +9,20 @@ Page({
 
   },
 
+  onGoToDetail(event) {
+    const pid = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/posts_detail/posts_detail?pid='+pid,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    
+    this.setData({
+      posts:content
+    })  
   },
 
   /**

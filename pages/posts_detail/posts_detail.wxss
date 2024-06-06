@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.head-image {
+  width: 100%;
+  height: 460rpx;
+}
+
+.author-data {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  align-items: center;
+}
+
+.author-data-image {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.author-data-name {
+  font-size: 30rpx;
+  font-weight: 300;
+  margin-left: 20rpx;
+  color: #666;
+}
+
+.author-data-const {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 20rpx;
+}
+
+.author-data-date {
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  color: #999;
+}
+
+.title {
+  margin-left: 40rpx;
+  font-size: 36rpx;
+  font-weight: 700;
+  margin-top: 30rpx;
+  letter-spacing: 2px;
+  color: #4b556c;
+}
+
+.horizon {
+  width: 660rpx;
+  height: 1rpx;
+  background-color: #e5e5e5;
+  position: absolute;
+  z-index: -99;
+}
+
+.circle image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.share-img {
+  margin-left: 30rpx;
+}
+
+.tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.circle {
+  display: flex;
+  width: 660rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+}

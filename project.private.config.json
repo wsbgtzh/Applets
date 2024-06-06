@@ -8,8 +8,15 @@
     "miniprogram": {
       "list": [
         {
-          "name": "posts/posts",
-          "pathName": "posts/posts",
+          "name": "pages/posts_detail/posts_detail",
+          "pathName": "pages/posts_detail/posts_detail",
+          "query": "pid=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/posts/posts",
+          "pathName": "pages/posts/posts",
           "query": "",
           "launchMode": "default",
           "scene": null

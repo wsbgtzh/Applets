@@ -3,7 +3,7 @@
 <view class="container">
   <l-avatar class="l-avatar" placement="bottom" size="180" open-data="{{['userAvatarUrl', 'userNickName']}}" />
   <text class="motto">Hello, tzh</text>
-  <view class="journey-container">
+  <view bindtap="handleTap" class="journey-container">
     <text class="journey">开启小程序之旅</text>
   </view>
 </view>
