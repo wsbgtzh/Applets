@@ -1,6 +1,5 @@
-import {content} from '../data/posts_data';
+const app = getApp();
 
-// pages/posts_detail/posts_detail.js
 Page({
 
   /**
@@ -10,6 +9,29 @@ Page({
     postData: {},
     postsCollected: false,
     _pid: null,
+    _mgr: null,
+  },
+
+  onMusic(event) {
+    const mgr = this.data._mgr;
+    app.isPlaying = !app.isPlaying;
+    mgr.onPlay(() => {
+      app.isPlaying = true;
+      this.setData({
+        is_playing: app.isPlaying,
+      });
+    });
+    mgr.onPause(() => {
+      app.isPlaying = false;
+      this.setData({
+        is_playing: app.isPlaying,
+      });
+    });
+    const pid = this.data._pid - 1;
+    mgr.title = this.data.postData.music.title;
+    if (app.isPlaying === false)
+      mgr.pause();
+    else mgr.src = this.data.postData.music.url; 
   },
 
   async onShare(event) {
@@ -36,14 +58,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    const postData = content[options.pid - 1];
-    this.data._pid = options.pid;
-    const postsCollected = wx.getStorageSync('posts_collected');
-    const collected = postsCollected[this.data._pid];
-    this.setData({
-      collected,
-      postData
-    })
+    let postData = {}
+    wx.request({
+      url: 'http://127.0.0.1:8000/api/posts/' + options.pid + '/',
+      success: res=> {
+        postData = res.data
+        this.data._mgr = wx.getBackgroundAudioManager();
+        this.data._pid = options.pid;
+        const postsCollected = wx.getStorageSync('posts_collected');
+        const collected = postsCollected[this.data._pid];
+        this.data._mgr.onPlay(() => {
+          app.isPlaying = true;
+          this.setData({
+            is_playing: app.isPlaying,
+          });
+        });
+        this.data._mgr.onPause(() => {
+          app.isPlaying = false;
+          this.setData({
+            is_playing: app.isPlaying,
+          });
+        });
+        this.setData({
+          collected,
+          postData: postData,
+          is_playing: app.isPlaying,
+        });
+          }  
+        })
+    
   },
 
   /**

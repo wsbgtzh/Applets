@@ -9,7 +9,7 @@ Page({
   },
 
   handleTap: () => {
-    wx.redirectTo({
+    wx.switchTab({
       url: '/pages/posts/posts',
     })
   },

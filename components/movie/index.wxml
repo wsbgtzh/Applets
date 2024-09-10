@@ -1,0 +1,8 @@
+<view class="container">
+  <image class="poster" src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2907600518.jpg"></image>
+  <text class="title">盗梦空间</text>
+  <view class="rate-container">
+    <l-rate size="22" score="3" />
+    <text class="score">3.0</text>
+  </view>
+</view>

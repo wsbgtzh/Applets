@@ -1,3 +1,4 @@
+// pages/movies/movies.js
 Page({
 
   /**
@@ -7,25 +8,11 @@ Page({
 
   },
 
-  onGoToDetail(event) {
-    const pid = event.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/posts_detail/posts_detail?pid='+pid,
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    wx.request({
-      url: 'http://127.0.0.1:8000/api/posts/',
-      success: res => {
-        this.setData({
-          posts:res.data
-        })   
-      }
-    }) 
+
   },
 
   /**

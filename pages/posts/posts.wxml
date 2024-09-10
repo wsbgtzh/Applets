@@ -13,7 +13,7 @@
   </swiper>
 
 <block wx:for="{{posts}}" wx:key="postId">
-  <view data-id="{{item.postId}}" bindtap="onGoToDetail" class="post-container">
+  <view data-id="{{item.id}}" bindtap="onGoToDetail" class="post-container">
     <view class="post-author-date">
       <image class="post-author" src="{{item.imgSrc}}"/>
       <text class="post-date">{{item.date}}</text>
@@ -21,7 +21,6 @@
 
     <text class="post-title">{{item.title}}</text>
     <image class="post-image" src="{{item.imgSrc}}"/>
-    <text class="post-content">{{item.content}}</text>
 
     <view class="post-like">
       <l-icon class="post-like-image" color="#666" size="32" name="favor" />
